@@ -1,0 +1,31 @@
+id,question_text,state
+0,¿Siente pesadez en la cabeza? ,1
+1,¿Siente el cuerpo cansado?,1
+2,¿Tiene cansancio en las piernas?,1
+3,¿Tiene deseos de bostezar?,1
+4,¿Siente la cabeza aturdida?,1
+5,¿Está somnoliento?,1
+6,¿Siente la vista cansada?,1
+7,¿Siente rigidez o torpeza en los movimientos?,1
+8,¿Se siente poco firme e inseguro al estar de pie?,1
+9,¿Tiene deseos de acostarse?,1
+10,¿Siente dificultad para pensar?,2
+11,¿Se cansa al hablar?,2
+12,¿Está nervioso?,2
+13,¿Se siente incapaz de fijar la atención?,2
+14,¿Se siente incapaz de poner atención en algo?,2
+15,¿Se le olvidan fácilmente las cosas?,2
+16,¿Ha perdido la confianza en sí mismo?,2
+17,¿Se siente ansioso?,2
+18,¿Le cuesta trabajo mantener el cuerpo en una buena postura?,2
+19,¿Pierde fácilmente la paciencia?,2
+20,¿Presenta dolor de cabeza?,3
+21,¿Siente los hombros entumecidos?,3
+22,¿Siente dolor de espalda?,3
+23,¿Tiene dificultad para respirar?,3
+24,¿Tiene sed?,3
+25,¿Tiene la voz ronca?,3
+26,¿Se siente mareado?,3
+27,¿Le tiemblan los parpados?,3
+28,¿Le tiemblan las piernas o los brazos?,3
+29,¿Se siente enfermo?,3

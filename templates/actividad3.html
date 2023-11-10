@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>{{ titulo }}</title>
+    <style>
+        #numero{
+            width:50px;
+        }
+        #texto_largo{
+            width:450px;
+        }
+        @media screen and (max-width: 600px) {
+            #texto_largo {
+                width:300px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container text-center"> 
+            <div class="row"> 
+                  <div class="col-md-6 col-sm-6  text-center">   
+                    <br>       
+                    <img src={% static 'logo.png' %} alt="imagen"> 
+                  </div>
+                  <div class="col-md-6 col-sm-6  text-center">   
+                    <br>       
+                    <img src={% static 'actividad3.png' %} alt="imagen" width="120" height="120"> 
+                  </div>
+
+                <div class="col-md-12 col-sm-12">        
+                  <br> 
+                  <h1 class="text-info-emphasis">{{ titulo }}</h1>
+                  <h4 class="text-info bg-dark">{{ contenido }}</h4>
+                </div>
+                {% if username %}
+                    <h5 class="text-info-emphasis text-center">Hola, <strong>{{ username }}</strong>. ¡Bienvenido de nuevo!</h5>
+                <!-- Puedes mostrar contenido personalizado para el usuario autenticado aquí -->
+                {% else %}
+                    <p>Por favor inicia sesión para acceder a tu página de inicio.</p>
+                {% endif %}
+            </div>
+        </div>    
+    </header>
+    
+    <div class="container">
+        <p><strong>Descripción</strong>: La aplicación puede permitir a los médicos registrar su tiempo de trabajo y actividades diarias para identificar patrones de fatiga.</p>
+        <p><strong>Mensaje</strong>: "Por favor, registra tu inicio y fin de turno, así como cualquier actividad relevante."</p>
+    </div> 
+
+    <form method="post" action="{% url 'vistaactividad3' %}">
+        {% csrf_token %}
+        <div class="container col-md-8 offset-md-2 text-center">
+            <p>Hoy tuve el turno de la 
+                <select name="trabajo_turno"> 
+                    <option value="mañana">Mañana</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noche">Noche</option>
+                </select> .
+                La hora de Inicio fue a las 
+                <input id="numero" type="number" name="hora_inicio" value="0"> de la 
+                <select name="incio_trabajo"> 
+                    <option value="si">Mañana</option>
+                    <option value="no">Tarde</option>
+                    <option value="no">Noche</option>
+                </select>
+                y la hora de Fin de turno fue a las 
+                <input id="numero" type="number" name="hora_fin" value="0"> de la 
+                <select name="final_trabajo"> 
+                    <option value="si">Mañana</option>
+                    <option value="no">Tarde</option>
+                    <option value="no">Noche</option>
+                </select>.  <br>En el turno tuve actividades extras o relevantes: 
+                <input id="texto_largo" type="text" name="actividad_relevante">
+                <br>Además tengo una nota adicional al respecto de este turno: 
+                <input id="texto_largo" type="text" name="nota_adicional"> <br>
+                ¿Verificar si estas circunstancias de carga laboral puede generar fatiga?</p>
+            <input class="btn btn-outline-primary btn-sm"  type="submit" value="Enviar" id="boton">
+        </div>
+    </form>
+
+    <div class="col-md-12 col-sm-12">
+        <h2 class="text-center text-primary text-center">Recomendaciones Preventivas</h2>
+        <p class="placeholder-glow text-center">
+            <span class="placeholder col-6 bg-info center"></span>
+        </p>
+        <ol>
+            {% for response in resultado %}
+                <p style="font-size:15px" class="text-info-emphasis">{{ response|safe }}</p>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <div class="container text-center">
+        <form action="{% url 'home' %}" method="get">
+            <button class="btn btn-outline-info" type="submit">Regresar al Inicio</button>
+        </form>
+    </div>
+</body>
+</html>
