@@ -68,7 +68,7 @@ def procesar_seleccion(request):
     responses = []
     if request.method == 'POST':
         opcion_seleccionada = request.POST.get('opcion_seleccionada')
-        openai.api_key = "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"
+        openai.api_key = "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"
         # Contexto del asistente
         context = {"role": "system",
                 "content": "Eres un Profesional que asistira para la prevencion de fatiga laboral en el personal medico de una clinica."}
@@ -252,7 +252,7 @@ def vistaactividad1(request):
         nuevo_reg=Activity1(act1_usuario = username, horas_diarias = horas_diarias, horas_descanso=horas_descanso, periodos_descando=periodos_comidas,trabajo_sabado = trabajo_sabados, trabajo_domingo=trabajo_domingos)
         nuevo_reg.save()
         if request.method == 'POST':
-            openai.api_key = "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"
+            openai.api_key = "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"
             # Contexto del asistente
             context = {"role": "system",
                     "content": "Eres un Profesional que asistira para la prevencion de fatiga laboral analizando la carga laboral del trabajador con periodos de descanso incluidos fines de semana."}
@@ -291,7 +291,7 @@ def vistaactividad3(request):
                             turno_actividades=actividad_relevante,turno_notas=nota_adicional)
         nuevo_reg.save()
         if request.method == 'POST':
-            openai.api_key = "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"
+            openai.api_key = "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"
             # Contexto del asistente
             context = {"role": "system",
                     "content": "Eres un Profesional que asistira para la prevencion de fatiga laboral en el personal medico analizando la carga horaria de trabajo asi como actividades relevantes y notas adicionales dentro de su turno."}
@@ -327,7 +327,7 @@ def vistaactividad1(request):
         nuevo_reg=Activity1(act1_usuario = username, horas_diarias = horas_diarias, horas_descanso=horas_descanso, periodos_descando=periodos_comidas,trabajo_sabado = trabajo_sabados, trabajo_domingo=trabajo_domingos)
         nuevo_reg.save()
         if request.method == 'POST':
-            openai.api_key = "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"
+            openai.api_key = "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"
             # Contexto del asistente
             context = {"role": "system",
                     "content": "Eres un Profesional que asistira para la prevencion de fatiga laboral analizando la carga laboral del trabajador con periodos de descanso incluidos fines de semana."}
@@ -357,7 +357,7 @@ def vistaactividad6(request):
         nuevo_reg=ActivityN(actN_usuario = username, actividad = 'OK Actividad 6')
         nuevo_reg.save()
         if request.method == 'POST':
-            openai.api_key = "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"
+            openai.api_key = "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"
             # Contexto del asistente
             context = {"role": "system",
                     "content": "Eres un Profesional que asistira para la prevencion de fatiga laboral en el personal medico de una clinica."}
@@ -387,7 +387,7 @@ def vistaactividad7(request):
         nuevo_reg=ActivityN(actN_usuario = username, actividad = 'OK Actividad 7')
         nuevo_reg.save()
         if request.method == 'POST':
-            openai.api_key = "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"
+            openai.api_key = "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"
             # Contexto del asistente
             context = {"role": "system",
                     "content": "Eres un Profesional que asistira para la prevencion de fatiga laboral en el personal medico de una clinica."}
